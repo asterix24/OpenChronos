@@ -1,9 +1,7 @@
-*.[oa]
+tags
 *.pyc
-*.*~
-*.s
-.pida-metadata
-build
-TAGS
-doc/*.html
-output.map
+*.swp
+*.o
+.gitignore
+build/
+*.map
