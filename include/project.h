@@ -39,6 +39,7 @@
 // *************************************************************************************************
 // Include section
 //pfs
+#include <stdint.h>
 #include <intrinsics.h>
 #include "../bluerobin/bm.h"
 

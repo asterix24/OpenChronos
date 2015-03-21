@@ -45,6 +45,7 @@
  */
 #include "bsp_board_defs.h"
 #include "bsp_macros.h"
+#include <stdint.h>
 
 /* ------------------------------------------------------------------------------------------------
  *                                          BSP Defines
