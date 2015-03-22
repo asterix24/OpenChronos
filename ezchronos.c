@@ -174,17 +174,17 @@ int main(void)
 	while(1)
 	{
 		// When idle go to LPM3
-    	idle_loop();
+		idle_loop();
 
-    	// Process wake-up events
-    	if (button.all_flags || sys.all_flags) wakeup_event();
+		// Process wake-up events
+		if (button.all_flags || sys.all_flags) wakeup_event();
 
-    	// Process actions requested by logic modules
-    	if (request.all_flags) process_requests();
+		// Process actions requested by logic modules
+		if (request.all_flags) process_requests();
 
-    	// Before going to LPM3, update display
-    	if (display.all_flags) display_update();
- 	}
+		// Before going to LPM3, update display
+		if (display.all_flags) display_update();
+	}
 }
 
 
@@ -220,7 +220,7 @@ void init_application(void)
 	// ---------------------------------------------------------------------
 	// Enable 32kHz ACLK
 	P5SEL |= 0x03;                            // Select XIN, XOUT on P5.0 and P5.1
-	UCSCTL6 &= ~XT1OFF;        				  // XT1 On, Highest drive strength
+	UCSCTL6 &= ~XT1OFF;						  // XT1 On, Highest drive strength
 	UCSCTL6 |= XCAP_3;                        // Internal load cap
 
 	UCSCTL3 = SELA__XT1CLK;                   // Select XT1 as FLL reference

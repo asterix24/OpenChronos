@@ -244,7 +244,7 @@ const uint8_t mrfiRadioCfg[][2] =
  *  The static assert below ensures that there is no mismatch.
  */
 // [BM] Changed channel assignment to comply with local regulations
-#ifdef ISM_EU 
+#ifdef ISM_EU
 static const uint8_t mrfiLogicalChanTable[] =
 {
   0,
@@ -269,7 +269,7 @@ static const uint8_t mrfiLogicalChanTable[] =
 		  50,
 		  80,
 		  110
-		};		
+		};
 		#else
 			#error "Wrong ISM band specified (valid are ISM_LF, ISM_EU and ISM_US)"
 		#endif
@@ -306,8 +306,8 @@ static const uint8_t mrfiRFPowerTable[] =
 // [BM] Changed default output power to comply with dongle settings
   0x0F,
   0x27,
-// [BM] Increase output power from -0.3dBm to +1.4dBm (433MHz) / +1.1dBm (868MHz) / +1.3dBm (915MHz) to compensate antenna loss  
-#ifdef ISM_EU 
+// [BM] Increase output power from -0.3dBm to +1.4dBm (433MHz) / +1.1dBm (868MHz) / +1.3dBm (915MHz) to compensate antenna loss
+#ifdef ISM_EU
   0x8C
 #else
   #ifdef ISM_US
@@ -481,7 +481,7 @@ void MRFI_Init(void)
   // [BM] Apply global frequency offset to FSCTRL0
   MRFI_STROBE_IDLE_AND_WAIT();
   MRFI_RADIO_REG_WRITE(FSCTRL0, rf_frequoffset);
-  
+
   /* set default channel */
   MRFI_SetLogicalChannel( 0 );
 

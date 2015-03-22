@@ -16,16 +16,16 @@ void __delay_cycles(unsigned long __cycles)
 {
 	// divide by eight
 	asm volatile("clrc");
-	asm volatile("rra.w %[src]" 
-		: [src] "=r" (__cycles) 
+	asm volatile("rra.w %[src]"
+		: [src] "=r" (__cycles)
 		: "[src]" (__cycles) );
 	asm volatile("clrc");
-	asm volatile("rra.w %[src]" 
-		: [src] "=r" (__cycles) 
+	asm volatile("rra.w %[src]"
+		: [src] "=r" (__cycles)
 		: "[src]" (__cycles) );
 	asm volatile("clrc");
-	asm volatile("rra.w %[src]" 
-		: [src] "=r" (__cycles) 
+	asm volatile("rra.w %[src]"
+		: [src] "=r" (__cycles)
 		: "[src]" (__cycles) );
 	asm volatile("DelayLoop:");
 	asm volatile("nop");	// add nops to increase loop to eight clock cycles
@@ -34,7 +34,7 @@ void __delay_cycles(unsigned long __cycles)
 	asm volatile("nop");
 	asm volatile("nop");
 	asm volatile("dec.w %[src]"
-		: [src] "=r" (__cycles) 
+		: [src] "=r" (__cycles)
 		: "[src]" (__cycles));
 	asm volatile("jne DelayLoop");
 }
@@ -45,11 +45,11 @@ void     __set_interrupt_state(istate_t state)
 	 __asm__("bis %0,r2" : : "ir" ((uint16_t) state));
 }
 
-	
+
 //__get_interrupt_state  used in bsp_msp430_defs.h, rf1a.c
 istate_t __get_interrupt_state(void)
 {
 	return(READ_SR&0x0008);
  }
- 
- 
+
+
