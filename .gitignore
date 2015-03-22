@@ -1,7 +1,9 @@
 tags
+TAGS
 *.pyc
 *.swp
 *.o
 .gitignore
 build/
 *.map
+
